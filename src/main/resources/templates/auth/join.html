@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        background-image: linear-gradient(to bottom right, #e1bee7, #b2ebf2);
+        height: 150%;
+      }
+      div {
+        border: 1px red solid;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .joinform {
+        display: row;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      회원가입
+      <div class="joinform">
+        <div>
+          <br />
+          <label for="email">이메일</label>
+          <input id="id" name="id" placeholder="이메일을 입력하세요." />
+          <br />
+          <label for="password">비밀번호</label>
+          <input
+            id="password"
+            name="password"
+            placeholder="비밀번호를 입력하세요."
+          />
+          <br />
+          <label for="username">이름</label>
+          <input
+            id="userName"
+            name="userName"
+            placeholder="이름을 입력하세요."
+          />
+          <br />
+          <button type="button" onclick="requestJoin()">회원가입</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script>
+      const requestJoin = () => {
+        const dto = {
+          user: {
+            id: document.getElementById("id").value,
+            password: document.getElementById("password").value,
+            userName: document.getElementById("userName").value,
+          },
+        };
+  
+        fetch("/api/v1/auth/join", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dto),
+        })
+          .then((response) => response.text())
+          .then((result) => {
+            alert(result.message);
+          });
+      };
+    </script> -->
+  </body>
+</html>
